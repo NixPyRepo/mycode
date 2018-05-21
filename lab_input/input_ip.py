@@ -7,4 +7,4 @@ print("You told me the IPv4 address is: " + user_input)
 
 vendor_name = input("Enter the vendor name of your computer: ")
 
-print("You told me the vendore name is: " + vendor_name)
+print("You told me the vendor name is: " + vendor_name)
