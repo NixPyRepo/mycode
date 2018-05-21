@@ -1,2 +1,4 @@
 # mycode
-This is my first repo. I am a student studying python and these are my 3.14 Projects. 
+This is my first repo. I'm learning how to utilize python in network automation.  
+
+
