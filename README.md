@@ -35,7 +35,7 @@ Code tests were done in Ubuntu 16.4
 
 ## Contributing
 
-Here you could make notes about how others might contribute to your code. For right now, a friendly message saying you'll accept any and all help from other coders would be great!
+Any help, advice, or pointers will gladly be accepted.
 
 ## Authors
 
