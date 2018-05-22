@@ -39,7 +39,7 @@ Any help, advice, or pointers will gladly be accepted.
 
 ## Authors
 
-* ** Nick Mahhoney  **  
+* Nick Mahoney
 
 ## License
 
