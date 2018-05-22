@@ -7,9 +7,5 @@ word = "orange" #add the word orange to the variable word as a string
 
 
 ##Print the word orange by calling indicies in the array "word"
-print(str(word[0]), end="")
-print(str(word[1]), end="")
-print(str(word[2]), end="")
-print(str(word[3]), end="")
-print(str(word[4]), end="")
-print(str(word[5]), end="")
+for i in word:
+    print(str(i), end="")
