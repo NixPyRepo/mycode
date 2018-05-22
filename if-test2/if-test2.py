@@ -5,13 +5,13 @@
 def check_ip():
     ip_check = input("Apply an IP address: ") #get user input and assign it to ip_check
 
-    gateway = "192.168.70.1"
+    gateway = "192.168.70.1" #add gateway IP address to a variable
 
-    if ip_check == gateway:
+    if ip_check == gateway: #comapre user input with gateway IP
         print("Looks like the IP address of the gateway was set: " + ip_check + " this is not recommended.\n")
-        answer = input("Do you want to continue (Y/N)?: ").upper()
+        answer = input("Do you want to continue (Y/N)?: ").upper() #Prompts user for confirmation to proceed
 
-        if answer == "N":
+        if answer == "N": #if No then start the function over
             check_ip()
 
 
@@ -19,8 +19,8 @@ def check_ip():
         print("Looks like the IP address was set: " + ip_check + "\n")
 
     else:
-        print("You did not enter input \n")
+        print("You did not enter input \n") #Lets the user know there was no data entered and starts the function over
         check_ip()
 
-check_ip()
+check_ip() #Start of the program by calling the above function
 print("The program is now exiting")
