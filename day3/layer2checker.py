@@ -9,13 +9,13 @@ l2Proto = {"eth": "ethernet protocol allowed",
            "otn": "optical network allowed"}
 
 #
-user_l2 = ""
-while (user_l2 not in l2Proto.keys()):
+user_proto = ""
+while (user_proto not in l2Proto.keys()):
 
-    user_l2 = input("Enter your L2 protocol: ")
+    user_proto = input("Enter your L2 protocol: ")
 
-    if user_l2 in l2Proto.keys():
-        print(l2Proto[user_l2])
+    if user_proto in l2Proto.keys():
+        print(l2Proto[user_proto])
 
     else:
         print("no idea what technology that is\n")
