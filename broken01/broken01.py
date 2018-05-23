@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # A program that prompts a user for two operators and and operation (plus or minus)
 # the program then shows the result.
 # The user may enter 'q' to exit the program.
