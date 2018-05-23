@@ -15,7 +15,7 @@ def check_ip():
             check_ip()
 
 
-    elif ip_check: #check to see if ip_check is true (not empty)
+    if ip_check: #check to see if ip_check is true (not empty)
         print("Looks like the IP address was set: " + ip_check + "\n")
 
     else:

@@ -13,11 +13,11 @@ def letterGrade():#Define the function to convert numeric score to letter grade
         #A series of if/elif statements to check the user supplied data. When statment evaluates to true the corresponding message will print
         if user_score >= 90:
             print(message + "A")
-        elif 89.9 >= user_score >= 80:
+        elif user_score >= 80:
             print(message + "B")
-        elif 79.9 >= user_score >= 70:
+        elif user_score >= 70:
             print(message + "C")
-        elif 69.9 >= user_score >= 60:
+        elif user_score >= 60:
             print(message + "D")
         else:
             print(message + "F")
