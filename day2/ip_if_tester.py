@@ -13,7 +13,7 @@ ip_list = []
 def ipTester():
 
     user_ip = input("\nPlease enter an IP address: ") #Get user supplied IP address
-    
+
     #Check user_ip against gateway and dns_server. if true re-prompts for new ip address
     if user_ip == gateway:
         print("\nThis is the Gateway IP address. Please choose another IP address")
