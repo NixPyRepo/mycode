@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
-#Author: Nick Mahoney
-#Description:
-#
 
-
-vendors = ['cisco', 'juniper', 'big_ip', 'f5', 'arista', 'alta3', 'zach', 'stuart']
-
-approved_vendors = ['cisco', 'juniper', 'big_ip']
+vendors = ['cisco', 'juniper', 'big_ip', 'f5', 'arista']
 
 for x in vendors:
-    print("\nThe vendors is " + x, end="")
 
-    if x not in approved_vendors:
-        print(" - NOT AN APPROVED VENDOR!", end="")
+    print("The vendor is:" + x)
 
 print("\nOur loop has ended.")
