@@ -16,16 +16,29 @@ print( switch['ip'] )
 print( "First test - .get()" )
 print(switch.get('lynx'))
 
-print( "Second test - .get()" )
+print( "\nSecond test - .get()" )
 print(switch.get('lynx', "THE KEY IS IN ANOTHER CASTLE!"))
 
-print( "Third test - .get()" )
+print( "\nThird test - .get()" )
 print(switch.get('version'))
 
-print( "Fourth test - .keys()" )
+print( "\nFourth test - .keys()" )
 print(switch.keys())
 
-print( "Fifth test - .values()" )
+print( "\nFifth test - .values()" )
 print(switch.values())
 
-print(switch.get('sw1'))
+print( "\nSixth test - .pop()" )
+switch.pop('version') # removes this key (and value) pair
+print(switch.keys())   # notice the value of version is gone
+print(switch.values()) # notice the value 1.2
+
+print( "\nSeventh test - ADD a new value" )
+switch['adminlogin'] = 'karl08'
+print(switch.keys())
+print(switch.values())
+
+print( "\nEighth test - ADD a new value" )
+switch['password'] = 'qwerty'
+print(switch.keys())
+print(switch.values())
