@@ -27,3 +27,5 @@ print(switch.keys())
 
 print( "Fifth test - .values()" )
 print(switch.values())
+
+print(switch.get('sw1'))

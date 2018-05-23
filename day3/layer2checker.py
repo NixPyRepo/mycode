@@ -8,12 +8,15 @@ l2Proto = {"eth": "ethernet protocol allowed",
            "ifb": "infiniband NOT allowed",
            "otn": "optical network allowed"}
 
-#
+#Set empty variable to check in the while loop
 user_proto = ""
+
+#Checks the dictionary keys for the user supplied data if it is NOT a key in the dictionary continue to loop
 while (user_proto not in l2Proto.keys()):
 
     user_proto = input("Enter your L2 protocol: ")
 
+    #if the user supplied data is a valid key in the dictionary, print the message
     if user_proto in l2Proto.keys():
         print(l2Proto[user_proto])
 

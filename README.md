@@ -1,7 +1,6 @@
-# mycode (3.14 Projects)
+# mycode 
 
-This is my first repo. I'm currently learning how to do network automation with python.
-
+3.14 projects for network automation 
 
 
 ### Installing
