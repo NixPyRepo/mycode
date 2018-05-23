@@ -7,19 +7,20 @@ def letterGrade():#Define the function to convert numeric score to letter grade
     user_score = float(input("Please enter your numeric score: "))#Get user supplied data and stores it as a float
 
     #Ensure user supplied data is in the correct range if not, the function will start over
-    if user_score >= 0 and user_score <= 100:
+    if 0 < user_score < 100:
+        message = "Based on your score of " + str(user_score) + " your letter grade is: "
 
         #A series of if/elif statements to check the user supplied data. When statment evaluates to true the corresponding message will print
         if user_score >= 90:
-            print("Based on your score of " + str(user_score) + " your letter grade is: A")
-        elif user_score <= 89.9 and user_score >= 80:
-            print("Based on your score of " + str(user_score) + " your letter grade is: B")
-        elif user_score <= 79.9 and user_score >= 70:
-            print("Based on your score of " + str(user_score) + " your letter grade is: C")
-        elif user_score <= 69.9 and user_score >= 60:
-            print("Based on your score of " + str(user_score) + " your letter grade is: D")
+            print(message + "A")
+        elif 89.9 >= user_score >= 80:
+            print(message + "B")
+        elif 79.9 >= user_score >= 70:
+            print(message + "C")
+        elif 69.9 >= user_score >= 60:
+            print(message + "D")
         else:
-            print("Based on your score of " + str(user_score) + " your letter grade is: F")
+            print(message + "F")
     else:
         print("You must enter a number between 0 and 100\n")#Prints error message
         letterGrade()
