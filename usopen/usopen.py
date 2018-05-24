@@ -1,4 +1,5 @@
-Open Tournament Switch Checker -- 2018.05.01
+#!/usr/bin/env python3
+###Open Tournament Switch Checker -- 2018.05.01
 ''' usopen.py
 This script is being designed to provide the following automated tasks:
 - ping check the router (import os)
