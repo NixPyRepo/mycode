@@ -5,11 +5,25 @@
 #when a failed login is found print the IP address
 #Also look for successful logins and print the number found
 
+import os
+
+
+file_name = "keystone.common.wsgi"
+#Set the path to look for the file
+path_name = "$HOME"
+
+#us the os walk method to search for the file in the home dir
+for root, dirs, files in os.walk(path_name):
+
+	#once found join the root path with the filename to create the full path
+	if file_name in files:
+		file_name = os.path.join(root, file_name)
+
 loginFail = 0 
 loginSucc = 0
 
 #open the keystone file in read mode
-keystone = open('/home/student/mycode/parser/keystone.common.wsgi', 'r')
+keystone = open(file_name, 'r')
 
 #create an empty list
 failed_list = []
@@ -24,16 +38,13 @@ for i in range(len(keystone_lines)):
 		#increment failed logins
 		loginFail += 1
 		
-		#split the failed logins at every space
-		failedIP  = keystone_lines[i].split(" ")
+		#split the failed logins at every space and get the last item in the split list
+		failed_list.append(keystone_lines[i].split(" ")[-1])
 		
-		#The ip address is at the end of the line, get the last array item and appened it to the list
-		failedIP  = failedIP[(len(failedIP)-1)]
-		failed_list.append(failedIP)
 	elif "Loaded 2" in keystone_lines[i]:
 		loginSucc += 1	
 		
-
+keystone.close() 
 print("\nThe number of successful logins: " + str(loginSucc))
 print("\nThe number of failed logins: " + str(loginFail) + "\n")
 for n in failed_list:
