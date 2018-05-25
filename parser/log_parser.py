@@ -20,7 +20,7 @@ for root, dirs, files in os.walk(path_name):
 		file_name = os.path.join(root, file_name)
 
 loginFail = 0 
-loginSucc = 0
+loginSuccess = 0
 
 #open the keystone file in read mode
 keystone = open(file_name, 'r')
@@ -42,10 +42,10 @@ for i in range(len(keystone_lines)):
 		failed_list.append(keystone_lines[i].split(" ")[-1])
 		
 	elif "Loaded 2" in keystone_lines[i]:
-		loginSucc += 1	
+		loginSuccess += 1
 		
 keystone.close() 
-print("\nThe number of successful logins: " + str(loginSucc))
+print("\nThe number of successful logins: " + str(loginSuccess))
 print("\nThe number of failed logins: " + str(loginFail) + "\n")
 for n in failed_list:
 	print("Failed login from: " + str(n))
