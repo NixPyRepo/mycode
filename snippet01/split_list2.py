@@ -4,8 +4,6 @@
 Description:
     Check user supplied IP address for block of 10 IPs
     Last octect must be less than 255
-
-
 '''
 
 import sys
@@ -31,6 +29,6 @@ if not result:
     print("Your IP address will be greater than 255")
 
 else:
-    print("Below is your IP address block:")
+    print("Your IP address is valid")
 
 
