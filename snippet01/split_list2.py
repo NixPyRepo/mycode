@@ -13,7 +13,7 @@ ip = sys.argv[1]
 def check_ip(ip_addr):
     #Check for 4 octets in ip address
     while len(ip_addr.split(".")) > 4:
-        ip_addr = input("You enter an invlaid IPv4 address. Please enter a valid IP: ")
+        ip_addr = input("You enter an invalid IPv4 address. Please enter a valid IP: ")
 
     #Create the max IP in the range
     ip_block = int(ip_addr.split(".")[-1]) + 10
