@@ -15,11 +15,29 @@ print('The startTime minute is: ' + str(startTime.minute))
 print('The startTime day is: ' + str(startTime.day))
 print('The startTime year is: ' + str(startTime.year))
 
+#Create empty list top hold the words
+user_words = []
+
+
+user_choice = ""
+
+#Keep asking questions until the user presses "q"
+while user_choice != "q":
+
+    user_choice = input("Enter a word to add to the dictionary or press \'q'\' to quit: ")
+
+    if user_choice.lower() != "q":
+        user_words.append(user_choice)
+
+print("You entered " + str(len(user_words)) + " words and they are: ")
+#Print each word individualy
+for word in user_words:
+    print(word)
 
 
 
 
 ## Figure out how long it took to do that something
-print('The code took: ' + str(datetime.now() - startTime) + ' to run.')
+print('\nThe code took: ' + str(datetime.now() - startTime) + ' to run.')
 
 
