@@ -2,8 +2,7 @@
 
 import random
 import turtle
-import time
-
+from time import sleep
 SIZE = 100
 
 def make_screen(width, height):
@@ -67,7 +66,7 @@ def roll_dice():
 
     for i in range(2):
         turtle.tilt(45)
-        time.sleep(.3)
+        sleep(.3)
 
 def get_players():
     #Error handling for bad input
@@ -102,11 +101,16 @@ dice_dic = {1: dice_1,
 players = get_players()
 
 #set the rounds var
-rounds = 0
+count = 0
+try:
+    turns = int(input("\nHow many rounds would you like to play?: "))
+except ValueError:
+    turns = int(input("You did not enter a number. Please enter the number of rounds you would like to play: "))
+
 make_screen(400, 400)
 
 #Loop to do three rounds
-while rounds < 2:
+while count < turns:
 
     #Clear the dice off the screen
     turtle.Screen().clearscreen()
@@ -125,7 +129,7 @@ while rounds < 2:
 
         #Add the number rolled to the players scored
         #An empty list cant be iterated. The first roll for each player will simply set the value
-        if rounds == 0:
+        if count == 0:
             players[key] = int(roll_num)
         #With at least one value in the list we can now add the scores
         else:
@@ -133,9 +137,9 @@ while rounds < 2:
             players[key] += int(roll_num)
 
     #Increment the rounds var
-    rounds += 1
+    count += 1
 
-print("*" * 10 + " RANKING " + "*" * 10)
+print("\n\n" + "*" * 10 + " RANKING " + "*" * 10)
 
 #Sorts the value from highest to lowest
 for k in sorted(players, key=players.get, reverse=True):
