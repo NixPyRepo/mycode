@@ -26,5 +26,6 @@ path = '/home/student/sw1.conf'
 sw1_conf_file = open(path, 'w')
 sw1_conf_file.write(running_conf)
 sw1_conf_file.close()
+device.close()
 
 

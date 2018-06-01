@@ -27,6 +27,20 @@ def web_connection(argument):
 
     return data
 
+def add_file():
+    arg = get_args()
+    data = web_connection(arg)
+
+    f = open('search.txt', 'w')
+    f.write(data)
+    f.close()
+
+    f = open("search.txt", 'r')
+    line = ' '.join((f.read()).replace('\n', ' ').split())
+
+    f.close()
+    return line
+
 def main():
 
     arg = get_args()
@@ -49,4 +63,5 @@ def main():
         else:
             print("The word " + key_word + " could not be found\n")
 
-main()
+line = add_file()
+print(line)
