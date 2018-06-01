@@ -11,14 +11,14 @@ import argparse
 def add_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-k", "--key", help="The full path and name of the file with your API key. \n\t Example: /home/foo/barr.txt", required=True )
+    parser.add_argument("-k", "--key", help="The full path and name of the file with your API key. \n\t Example: /home/foo/bar.txt", required=True )
 
     parser.add_argument("-u", "--url", help="The full url name of the site you want to call\n\t Example: https://api.nasa.gov/neo/rest/v1/feed?&api_key", \
     default="https://api.nasa.gov/neo/rest/v1/feed?&api_key")
 
     parser.add_argument("-d", "--start_date", help="The start date in yyyy-mm-dd format", required=True)
 
-    parser.add_argument("-D", "--end_date", help="The end date in yyy-mm-dd format")
+    parser.add_argument("-D", "--end_date", help="The end date in yyyy-mm-dd format")
 
     args = parser.parse_args()
 
@@ -80,4 +80,4 @@ for key in neo['near_earth_objects'].keys():
     print("Miles: " + str(miss_miles))
 
     total_miss = round(moon_lengths(int(miss_miles)))
-    print("Moon lengths: " + str(total_miss) + "\n") #+ str(moon_lengths(miss_miles)) + "\n")
+    print("Moon lengths: " + str(total_miss) + "\n")
