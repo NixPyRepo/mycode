@@ -17,14 +17,7 @@ def add_args():
     args = arguments.parse_args()
     return args
 
-def set_driver():
-
-    # Setting
-    args = add_args()
-    os = args.operating_system
-    user = args.user
-    passwd = args.password
-    addr = args.address
+def set_driver(os, user, passwd, addr):
 
     # Choose the device driver to use, Arista in this example
     driver = get_network_driver(os)

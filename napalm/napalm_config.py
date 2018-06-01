@@ -9,8 +9,15 @@ Description:
 import pprint as pp
 import napalm_setup
 
-#Create device object from the driver method in napalm_setup
-device = napalm_setup.set_driver()
+#Call in the arguments and set variables
+args = napalm_setup.add_args()
+os = args.operating_system
+user = args.user
+passwd = args.passwd
+device_addr = args.addr
+
+#Create the device object and pass in parameters
+device = napalm_setup.set_driver(os, user, passwd, device_addr)
 
 device.get_facts()
 pp.pprint(device.get_facts())
