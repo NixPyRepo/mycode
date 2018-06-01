@@ -1,23 +1,19 @@
 #!/usr/bin/env python3
-#Description: 
-#Use napalm to query remote devices for configurations
-#and use commmand line arguments to supply login creds
-from napalm import get_network_driver
+'''
+Author: Nick Mahoney
+Description:
+    Use napalm to query remote devices for configurations
+    import napalm setup script to add arguments and create driver object
+'''
+
 import pprint as pp
-import sys
+import napalm_setup
 
-#Choose the device driver to use, Arista in this example
-driver = get_network_driver('eos')
-
-#Set device info, IP address, user name, and password
-device = driver('172.16.2.10', sys.argv[1], sys.argv[2])
-
-device.open()
+#Create device object from the driver method in napalm_setup
+device = napalm_setup.set_driver()
 
 device.get_facts()
-
 pp.pprint(device.get_facts())
-
 config = device.get_config()
 
 #get the running config of the device
