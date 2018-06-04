@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 
-from sys import argv
 import paramiko, pmiko
 
 user = pmiko.get_user()
@@ -12,7 +11,7 @@ cmd = pmiko.get_cmd()
 addr = ""
 client = paramiko.SSHClient()
 
-
+#A dictionary to hold all users and their IPs
 user_ips = {"john" : "10.10.1.2",
             "paul" : "10.10.1.3",
             "george" : "10.10.1.4",
@@ -21,15 +20,11 @@ user_ips = {"john" : "10.10.1.2",
             "ringo" : "10.10.1.7",
             "student" : "localhost"
             }
-#Set up the ssh client
-client = paramiko.SSHClient()
-client.set_missing_host_key_policy(paramiko.WarningPolicy())
 
 #Establish the connection
-try:
-    if user in user_ips.keys():
-        addr = user_ips[user]
-except KeyError:
+if user in user_ips.keys():
+    addr = user_ips[user]
+else:
     print("The user " + user + " is not valid")
 
 
