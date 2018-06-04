@@ -4,19 +4,33 @@ import paramiko
 from sys import argv
 
 
-#Set up the ssh client
-client = paramiko.SSHClient()
-client.set_missing_host_key_policy(paramiko.WarningPolicy())
 
-#Establish the connection
-client.connect('localhost', username=argv[1], password=argv[2])
-
-
-#Accept argument
+user = argv[1]
+passwd = argv[2]
 cmd = argv[3]
 
+#Set up the ssh client
 
-def run_cmd(command):
+def start_conn(ip, user, passwd):
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.WarningPolicy())
+
+    #Establish the connection
+    client.connect(ip, username=user, password=passwd)
+    return client
+
+#Accept argument
+
+def get_user(user):
+    return user
+
+def get_pass(passwd):
+    return passwd
+
+def get_cmd(cmd):
+    return cmd
+
+def run_cmd(client, command):
 
     stdin, stdout, stderr = client.exec_command(command)
 
@@ -27,11 +41,5 @@ def run_cmd(command):
         return stderr
 
 
-result = run_cmd(cmd)
-
-print('result ' + cmd)
-
-for line in result:
-    print(' ' + line.strip('\n'))
 
 
