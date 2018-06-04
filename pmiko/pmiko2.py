@@ -37,7 +37,7 @@ client = pmiko.start_conn(addr, user, passwd)
 
 result = pmiko.run_command(client, cmd)
 
-print("Result: " + result)
+print("Result: " + cmd)
 
 for line in result:
     print( " " + line.strip("\n"))
