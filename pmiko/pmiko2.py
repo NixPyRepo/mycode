@@ -26,7 +26,8 @@ if user in user_ips.keys():
     addr = user_ips[user]
 else:
     print("The user " + user + " is not valid")
-
+    print("Program is now quiting")
+    exit()
 
 client = pmiko.start_conn(addr, user, passwd)
 
