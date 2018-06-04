@@ -18,10 +18,11 @@ cmd = argv[3]
 
 def run_cmd(command):
 
-    stdin, stdout, stderr =  client.exec_command(command)
+    stdin, stdout, stderr = client.exec_command(command)
 
-    if not stderr:
+    if stdout:
         return stdout
+
     else:
         return stderr
 
