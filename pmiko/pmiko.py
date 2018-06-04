@@ -5,9 +5,9 @@ from sys import argv
 
 
 
-user = argv[1]
-passwd = argv[2]
-cmd = argv[3]
+
+
+
 
 #Set up the ssh client
 
@@ -21,13 +21,16 @@ def start_conn(ip, user, passwd):
 
 #Accept argument
 
-def get_user(user):
+def get_user():
+    user = argv[1]
     return user
 
-def get_pass(passwd):
+def get_pass():
+    passwd = argv[2]
     return passwd
 
-def get_cmd(cmd):
+def get_cmd():
+    cmd = argv[3]
     return cmd
 
 def run_cmd(client, command):
